@@ -1,0 +1,78 @@
+<html>
+
+    <head>
+            <!-- Définit la taille d'affichage et l'échelle initiale -->
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+            <!-- Importe la police Google Play -->
+        <link href="https://fonts.googleapis.com/css?family=Play&display=swap" rel="stylesheet">
+        <!-- Titre de la page -->
+
+
+        <title>Prédiction de l'arthrose du genou</title>
+        <!-- Définit la couleur du thème pour les navigateurs mobiles -->
+
+
+        <meta name="theme-color" content="#ffffff">
+    </head>
+
+<body>
+    <!-- Conteneur principal de la page -->
+    <div class="very_main">
+        <!-- En-tête de la page -->
+
+        <header>
+            <div class="top_frame">
+                <!-- Titre de la page -->
+                <h1>Prédiction de l'arthrose du genou</h1>
+            </div>
+        </header>
+
+        {% extends "base.html" %} {% block content %}
+
+        <!-- Paragraphe de description de la page -->
+        <p class="description">
+            <h3> Sélectionnez votre image X-Ray du genou et cliquez sur ' Prédire ! ' pour obtenir votre diagnostic.</h3>
+        </p>
+
+        <div>
+            <!-- Formulaire pour charger l'image -->
+            <form id="upload-file" method="post" enctype="multipart/form-data">
+                <label for="imageUpload" class="upload-label">
+                    Sélectionnez votre image X-Ray
+                </label>
+                <!-- Champ d'entrée pour le fichier image -->
+                <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+            </form>
+
+
+            <!-- Section d'image (cachée initialement) -->
+            <div class="image-section" style="display:none;">
+                <div class="img-preview">
+                    <!-- Aperçu de l'image sélectionnée -->
+                    <div id="imagePreview">
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="upload-label" id="btn-predict">Prédire !</button>
+                </div>
+            </div>
+
+            <!-- Icône de chargement (cachée initialement) -->
+            <div class="loader" style="display:none;"></div>
+            
+            <!-- Résultat de la prédiction (initialement vide) -->
+            <h3 id="result">
+                <span> </span>
+            </h3>
+
+
+        </div>
+
+    </div>
+
+
+    {% endblock %}
+
+</body>
+
+</html>
